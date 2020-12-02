@@ -33,8 +33,11 @@ if (process.env.NODE_ENV == "development") {
 }
 
 // Routes Middleware
-const blogRoute = require('./routes/blog')
-app.use(blogRoute)
+const blogRoutes = require('./routes/blog')
+app.use(blogRoutes)
+
+const authRoutes = require('./routes/auth')
+app.use('/api', authRoutes)
 
 
 // port
