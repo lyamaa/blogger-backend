@@ -32,10 +32,10 @@ if (process.env.NODE_ENV == "development") {
   app.use(cors({ origin: `${process.env.CLIENT_URL}` }));
 }
 
-// Routes
-app.get("/api", (req, res) => {
-  res.json({ time: Date().toString() });
-});
+// Routes Middleware
+const blogRoute = require('./routes/blog')
+app.use(blogRoute)
+
 
 // port
 
